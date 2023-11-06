@@ -1,1 +1,1 @@
-# tecnica_busca_espaco_estados
+# tecnicas de busca em espaco de estados
