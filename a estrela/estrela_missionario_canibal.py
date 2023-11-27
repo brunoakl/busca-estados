@@ -36,15 +36,9 @@ def a_star(start, goal):
     frontier = [(heuristic(start), start)]
     came_from = {}
     explored = set()
-    start_time = time.time()
-    mem_usage = memory_usage()[0]
     while frontier:
         _, current = heapq.heappop(frontier)
         if current == goal:
-            end_time = time.time()
-            mem_usage = memory_usage()[0] - mem_usage
-            print(f"Tempo de execução: {end_time - start_time:.6f} segundos")
-            print(f"Memória usada: {mem_usage:.6f} MB")
             return reconstruct_path(came_from, current)
         explored.add(current)
         for node in successors(current):
@@ -62,7 +56,12 @@ def print_estado(estado):
 start_state = (3, 3, 1)
 goal_state = (0, 0, 0)
 
+start_time = time.time()
+mem_usage = memory_usage()[0]
 path = a_star(start_state, goal_state)
+print(f"Tempo de execução: {time.time() - start_time:.6f} segundos")
+print(f"Memória usada: {memory_usage()[0] - mem_usage:.6f} MB")
+
 if path:
     print("Solution path:")
     for i, state in enumerate(path):

@@ -1,4 +1,6 @@
 import heapq
+import time
+from memory_profiler import memory_usage
 
 def heuristic(state, goal):
     return sum(abs(b % 3 - g % 3) + abs(b//3 - g//3)
@@ -39,7 +41,12 @@ def a_star(start, goal):
 start_state = (7, 2, 4, 5, 0, 6, 8, 3, 1)
 goal_state = (1, 2, 3, 4, 5, 6, 7, 0, 8)
 
+start_time = time.time()
+mem_usage = memory_usage()[0]
 path = a_star(start_state, goal_state)
+print(f"Tempo de execução: {time.time() - start_time}")
+print(f"Uso de memória: {mem_usage:.6f} MB")
+
 print(f"[{start_state[0]} {start_state[1]} {start_state[2]}]")
 print(f"[{start_state[3]} {start_state[4]} {start_state[5]}]")
 print(f"[{start_state[6]} {start_state[7]} {start_state[8]}]")

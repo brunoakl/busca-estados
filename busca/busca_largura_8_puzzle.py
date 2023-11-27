@@ -23,21 +23,13 @@ def busca_largura(inicio):
     fila = deque([(inicio, [])])
     # Inicializa o conjunto de estados visitados
     visitados = set([inicio])
-    # Inicializa as variáveis de tempo e memória
-    start_time = time.time()
-    mem_usage = memory_usage()[0]
-    
-    # Enquanto a fila não estiver vazia
+
     while fila:
         # Remove o primeiro estado da fila
         estado_atual, caminho_atual = fila.popleft()
         
         # Se o estado atual é o objetivo, retorna o caminho até ele
         if estado_atual == objetivo:
-            end_time = time.time()
-            mem_usage = memory_usage()[0] - mem_usage
-            print(f"Tempo de execução: {end_time - start_time:.6f} segundos")
-            print(f"Memória usada: {mem_usage:.6f} MB")
             return caminho_atual
         
         # Para cada movimento possível a partir do estado atual
@@ -63,8 +55,12 @@ print(f"{inicio[0]} {inicio[1]} {inicio[2]}")
 print(f"{inicio[3]} {inicio[4]} {inicio[5]}")
 print(f"{inicio[6]} {inicio[7]} {inicio[8]}")
 print()
-# Chama a função de busca em largura
+
+start_time = time.time()
+mem_usage = memory_usage()[0]
 caminho = busca_largura(inicio)
+print(f"Tempo de execução: {time.time() - start_time:.6f} segundos")
+print(f"Memória usada: {memory_usage()[0] - mem_usage:.6f} MB")
 
 # Imprime o passo a passo da solução
 if caminho is None:
