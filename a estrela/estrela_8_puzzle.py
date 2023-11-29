@@ -1,3 +1,4 @@
+"""Module de Busca em espaço de estados por A Estrela (A*) """
 import heapq
 import time
 from memory_profiler import memory_usage

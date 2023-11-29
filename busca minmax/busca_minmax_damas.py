@@ -1,3 +1,4 @@
+"""Module de Busca em espaço de estados usando busca minmax com poda beta-alfa"""
 import numpy as np
 import random
 
