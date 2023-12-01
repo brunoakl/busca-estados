@@ -66,5 +66,5 @@ class BaseMissionarioCanibal(IMissionarioCanibal):
             for index, estado in enumerate(solucao):
                 print(f"{index + 1}:")
                 self.mostrar_estado(estado)
-            print(f"Tempo de execução: {tempo_execucao:.6f} segundos")
-            print(f"Memória usada: {memoria_usada:.6f} MB")
+            print(f"\nTempo de execução: {tempo_execucao:.6f} segundos")
+            print(f"Memória usada: {memoria_usada:.6f} MB\n")
