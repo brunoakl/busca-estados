@@ -54,3 +54,4 @@ No menu de Damas, o usuário pode executar a solução do problema de damas, ini
 Para mover uma peça, o usuário deve fornecer 2 pares de coordenada: a primeira sendo a de origem da peça e a segunda sendo o destino da peça.
 As coordenadas devem ser inseridas na ordem Linha X Coluna. Logo após a jogada do usuário, o computador fará uma jogada.
 Movimentos ilegais serão notificados no terminal. O jogo se encerra quando não houverem mais movimentos possíveis
+Atenção! Os únicos jeitos de sair da partida de damas é encerrando o terminal ou terminando a partida.
